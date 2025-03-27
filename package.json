@@ -1,0 +1,16 @@
+{
+    "name" : "com.github.yuleo21.vrcsdkbannerremover",
+    "displayName" : "VRCSDKBannerRemover",
+    "version" : "1.0.0",
+    "author": {
+      "name": "yuleo21"
+    },
+    "unity" : "2022.3",
+    "description" : "Remove the banner from the top of the VRCSDK panel.",
+    "vpmDependencies" : {
+      "com.vrchat.avatars" : ">=3.7.0"
+    },
+    "legacyFolders" : {
+      "Assets\\yuleo21\\VRCSDKBannerRemover": ""
+    }
+}
