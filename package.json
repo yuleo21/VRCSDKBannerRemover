@@ -11,6 +11,6 @@
       "com.vrchat.avatars" : ">=3.7.0"
     },
     "legacyFolders" : {
-      "Assets\\yuleo21\\VRCSDKBannerRemover": ""
+      "": ""
     }
 }
