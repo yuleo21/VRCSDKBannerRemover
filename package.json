@@ -1,6 +1,6 @@
 {
-    "name" : "com.github.yuleo21.vrcsdkbannerremover",
-    "displayName" : "VRCSDKBannerRemover",
+    "name" : "com.yuleo21.vrcsdkbannerremover",
+    "displayName" : "VRCSDK Banner Remover",
     "version" : "1.0.0",
     "author": {
       "name": "yuleo21"
