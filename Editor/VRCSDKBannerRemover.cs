@@ -19,7 +19,13 @@ public class SDKBannerRemover
             if (IsBannerVisible() && File.Exists(TARGET_FILE_PATH))
             {
                 HideBanner();
-                Debug.Log("SDK Banner Remover: Banner hidden.");
+                Debug.Log("VRCSDK Banner Remover: Banner hidden.");
+            }
+            else if (!IsBannerVisible() && File.Exists(TARGET_FILE_PATH))
+            {
+                // バナーが既に非表示の場合は、メニューの状態だけ更新
+                Menu.SetChecked(MENU_PATH_HIDE, true);
+                Menu.SetChecked(MENU_PATH_SHOW, false);
             }
         };
         
@@ -38,6 +44,11 @@ public class SDKBannerRemover
             {
                 _lastWriteTime = currentWriteTime;
                 RefreshVRCSDKWindows();
+                
+                // ファイル変更時にメニューのチェック状態も更新
+                bool isVisible = IsBannerVisible();
+                Menu.SetChecked(MENU_PATH_HIDE, !isVisible);
+                Menu.SetChecked(MENU_PATH_SHOW, isVisible);
             }
         }
         catch (System.Exception)
@@ -91,7 +102,7 @@ public class SDKBannerRemover
             EditorUtility.SetDirty(Selection.activeObject);
             
             string action = newHeightValue == "0%" ? "hidden" : "shown";
-            NotifyOperationResult($"VRC SDK Banner {action}.");
+            NotifyOperationResult($"VRCSDK Banner {action}.");
         }
         catch (System.Exception e)
         {
@@ -124,7 +135,7 @@ public class SDKBannerRemover
     private static bool ValidateFileIntegrity()
     {
         if (File.Exists(TARGET_FILE_PATH)) return true;
-        Debug.LogError($"SDK file missing at:\n{TARGET_FILE_PATH}");
+        Debug.LogError($"VRCSDK file missing at:\n{TARGET_FILE_PATH}");
         return false;
     }
 
