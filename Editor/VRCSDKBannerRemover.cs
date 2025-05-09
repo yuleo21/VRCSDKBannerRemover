@@ -23,7 +23,6 @@ public class SDKBannerRemover
             }
             else if (!IsBannerVisible() && File.Exists(TARGET_FILE_PATH))
             {
-                // バナーが既に非表示の場合は、メニューの状態だけ更新
                 Menu.SetChecked(MENU_PATH_HIDE, true);
                 Menu.SetChecked(MENU_PATH_SHOW, false);
             }
@@ -45,7 +44,6 @@ public class SDKBannerRemover
                 _lastWriteTime = currentWriteTime;
                 RefreshVRCSDKWindows();
                 
-                // ファイル変更時にメニューのチェック状態も更新
                 bool isVisible = IsBannerVisible();
                 Menu.SetChecked(MENU_PATH_HIDE, !isVisible);
                 Menu.SetChecked(MENU_PATH_SHOW, isVisible);
