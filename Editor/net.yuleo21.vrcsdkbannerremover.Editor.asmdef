@@ -1,5 +1,5 @@
 {
-    "name": "com.yuleo21.vrcsdkbannerremover.Editor",
+    "name": "net.yuleo21.vrcsdkbannerremover.Editor",
     "rootNamespace": "",
     "references": [],
     "includePlatforms": [
